@@ -1,0 +1,13 @@
+name:                s2n
+version:             0.1.0.0
+
+dependencies:
+  - base >= 4.7 && < 5
+
+ghc-options:
+- -Wall
+
+executables:
+  s2n:
+    source-dirs:      src
+    main:             Main.hs
