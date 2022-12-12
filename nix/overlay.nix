@@ -36,7 +36,9 @@ final: prev: {
       final.hpack
       final.stack
       final.ghcid
-      final.haskell.packages.ghc925.haskell-language-server
+      (final.haskell.packages.ghc925.haskell-language-server.overrideScope (hfinal: hprev: {
+        ListLike = final.haskell.lib.dontCheck hprev.ListLike;
+      }))
     ];
   };
 }
