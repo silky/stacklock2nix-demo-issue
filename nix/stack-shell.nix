@@ -13,6 +13,8 @@ haskell.lib.compose.buildStackProject {
   # Example native build inputs that are for building with stack.
   nativeBuildInputs = [
     bzip2
+    cairo
+    pango
     zlib
     zlib.dev
   ];

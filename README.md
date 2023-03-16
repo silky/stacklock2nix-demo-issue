@@ -1,14 +1,25 @@
 # notes
 
-works:
+fails:
 
 ```
-stack build --nix
+nix develop
 ```
 
-gets stuck on `ListLike`:
+infinite recurision
 
 ```
 > nix develop
-[1/1/6 built, 0.0 MiB DL] building ListLike-4.7.7 (checkPhase): Testing 2:ListLike:60:sort:14:DList Int
+error: infinite recursion encountered
+
+       at /nix/store/rksi78f7vq2xrfghg6jfg1r5dsa8lbv7-source/pkgs/stdenv/generic/make-derivation.nix:314:7:
+
+          313|       depsHostHost                = lib.elemAt (lib.elemAt dependencies 1) 0;
+          314|       buildInputs                 = lib.elemAt (lib.elemAt dependencies 1) 1;
+             |       ^
+          315|       depsTargetTarget            = lib.elemAt (lib.elemAt dependencies 2) 0;
+(use '--show-trace' to show detailed location information)
+
 ```
+
+notably, `stack build --nix` alone works; so i don't understand why.
