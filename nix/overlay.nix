@@ -16,14 +16,14 @@ final: prev: {
       final.s2n-stacklock.suggestedOverlay
 
       (hfinal: hprev: {
-        ListLike = final.haskell.lib.dontCheck hprev.ListLike;
       })
     ];
 
     all-cabal-hashes = final.fetchurl {
       name = "all-cabal-hashes";
-      url = "https://github.com/commercialhaskell/all-cabal-hashes/archive/828912a437a490c465a732ceac1f034281a764a3.tar.gz";
-      sha256 = "sha256-f3Xkn4EjuWFuQToWIWD/cvU5yJA4+RiFV6HYHsFgoXo=";
+      url = let hash = "58337345887bcb5ade89ea77e0eabe6b274cff28";
+             in "https://github.com/commercialhaskell/all-cabal-hashes/archive/${hash}.tar.gz";
+      sha256 = "sha256-pxXhmJp/aPF5XmepF25KLlH9M6Eu7ZTXKkAPlIwrqws=";
     };
   });
 
@@ -33,10 +33,7 @@ final: prev: {
     packages = haskPkgs: final.s2n-stacklock.localPkgsSelector haskPkgs;
     nativeBuildInputs = [
       final.cabal-install
-      final.hpack
       final.stack
-      final.ghcid
-      final.haskell.packages.ghc925.haskell-language-server
     ];
   };
 }
