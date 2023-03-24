@@ -15,3 +15,13 @@ doesn't work:
 > import System.Process
 > system "hpack --version"
 ```
+
+works!
+
+
+```
+> nix develop
+> cabal repl
+> import System.Process
+> system "hpack --version"
+```
