@@ -3,12 +3,15 @@
 works:
 
 ```
-stack build --nix
+> nix develop
+> hpack --version
 ```
 
-gets stuck on `ListLike`:
+doesn't work:
 
 ```
 > nix develop
-[1/1/6 built, 0.0 MiB DL] building ListLike-4.7.7 (checkPhase): Testing 2:ListLike:60:sort:14:DList Int
+> stack ghci --nix
+> import System.Process
+> system "hpack --version"
 ```
