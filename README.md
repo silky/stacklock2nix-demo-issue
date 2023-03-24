@@ -25,3 +25,7 @@ works!
 > import System.Process
 > system "hpack --version"
 ```
+
+### resolution
+
+- add the right program to the `nativeBuildInputs` to `./nix/stack-shell.nix` !
