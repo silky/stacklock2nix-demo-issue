@@ -19,4 +19,5 @@ executable s2n
   ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
+    , process
   default-language: Haskell2010

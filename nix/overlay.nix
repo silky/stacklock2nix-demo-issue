@@ -16,7 +16,6 @@ final: prev: {
       final.s2n-stacklock.suggestedOverlay
 
       (hfinal: hprev: {
-        ListLike = final.haskell.lib.dontCheck hprev.ListLike;
       })
     ];
 
@@ -35,8 +34,6 @@ final: prev: {
       final.cabal-install
       final.hpack
       final.stack
-      final.ghcid
-      final.haskell.packages.ghc925.haskell-language-server
     ];
   };
 }
